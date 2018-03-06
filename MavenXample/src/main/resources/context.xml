@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="studentrepository" class="com.xample.repository.StudentRepositoryImpl"></bean>
+
+	<bean name="studentService" class="com.xample.service.StudentServiceImpl"
+		>
+		<property name="studentRepository" ref="studentrepository"></property>
+		<constructor-arg name="studentRepository" ref="studentrepository"></constructor-arg>
+	</bean>
+
+</beans>
